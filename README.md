@@ -16,8 +16,9 @@ cd ~/venv/base3/bin/
 . ./activate
 ```
 
-then generate documentation with
+- generate documentation with:
 ```
 cd  <repo-root>
-
+python -m pydoc -w matrixofscatter.EdgeFile
+python -m pydoc -w matrixofscatter.EdgeFiles
 ```
