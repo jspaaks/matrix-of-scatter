@@ -81,7 +81,10 @@ class EdgeFile(object):
         return s
 
     def print(self):
-        # defer to self.__str__()
+        """
+        defer to self.__str__()
+        :return: None
+        """
         print(self.__str__())
 
     def load(self, objname):
@@ -132,10 +135,10 @@ class EdgeFile(object):
 
 if __name__ == '__main__':
 
-    # obj1 = EdgeFile('../data/pentax/edgelist-pentax-ncc.txt', 'ncc', nrecordsmax=100)
-    # obj2 = EdgeFile('../data/pentax/edgelist-pentax-pce.txt', 'pce')
+    # obj1 = EdgeFile('./data/pentax/edgelist-pentax-ncc.txt', 'ncc', nrecordsmax=100)
+    # obj2 = EdgeFile('./data/pentax/edgelist-pentax-pce.txt', 'pce')
 
-    obj1 = EdgeFile('../data/paretotest/obj1.txt', 'obj1')
+    obj1 = EdgeFile('./data/paretotest/obj1.txt', 'obj1')
     obj1.print()
 
     print('\n')

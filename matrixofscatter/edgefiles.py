@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 import sys
-from edgefile import EdgeFile
+from matrixofscatter import EdgeFile
 import plotly.offline as offlineplotly
 import plotly.graph_objs as grob
 from plotly import tools
@@ -179,6 +179,13 @@ class EdgeFiles(object):
         return self
 
     def show(self, dimensions=None):
+        """
+        Visualize the data in a matrix of 2-D scatter plots with automatic determination of how many axes there need to
+        be, where they should be located, that they should be linked, etc.
+        :param dimensions: list of strings, which are keys into the dict elements of the list of dicts kept in
+                           self.objSpace
+        :return: None
+        """
 
         def getscatterobj(xobjname, yobjname):
             """
@@ -307,15 +314,18 @@ class EdgeFiles(object):
         return None
 
     def print(self):
-        # defer to self.__str__()
+        """
+        Prints the EdgeFiles object by deferring to self.__str__().
+        """
         print(self.__str__())
+        return None
 
 
 if __name__ == '__main__':
 
     # make a python object representation of the data in these two files:
-    obj1 = EdgeFile('../data/paretotest/obj1.txt', 'obj1')
-    obj2 = EdgeFile('../data/paretotest/obj2.txt', 'obj2')
+    obj1 = EdgeFile('./data/paretotest/obj1.txt', 'obj1')
+    obj2 = EdgeFile('./data/paretotest/obj2.txt', 'obj2')
 
     # initialize the object that will merge all the info from separate EdgeFile objects
     edgeFiles = EdgeFiles()
